@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 0;
+    background: darkred;
+    color: #fff;
+}
+
+.overlay-inner img {
+    height: 500px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: cover;
+    object-fit: cover;
+    cursor: default;
+}
+
+.close {
+    color: darkred;
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.overlay.open {
+    display: grid;
+    place-items: center;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 9999;
+}
+
+.overlay-inner {
+    max-width: 700px;
+    max-height: 700px;
+    overflow: hidden;
+    background: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+    padding: 10px;
+    gap: 5px;
+    background: #0000ff90;
+}
+
+.item {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    z-index: 2;
+}
+
+.item img {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.image__overlay {
+    background: #ffc60032;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    place-items: center;
+    transform: translateY(100%);
+    transition: 0.2s;
+}
+
+.item:hover .image__overlay {
+    transform: translateY(0);
+}
+
+.image__overlay button {
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, .7);
+    padding: 4px 8px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.item.h2 {
+    grid-column: span 2;
+}
+
+.item.h3 {
+    grid-column: span 3;
+}
+
+.item.h4 {
+    grid-column: span 4;
+}
+
+.item.v2 {
+    grid-row: span 2;
+}
+
+.item.v3 {
+    grid-row: span 3;
+}
+
+.item.v4 {
+    grid-row: span 4;
+}
